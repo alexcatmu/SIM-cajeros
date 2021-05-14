@@ -1,0 +1,313 @@
+['scheduler.py']
+estoy configurando el modelo
+------------------------------------------------
+En el instante 0 :
+esta iniciando la simulacion
+------------------------------------------------
+
+------------------------------------------------
+En el instante 0.19178212224959965 :
+se ha creado una persona con id 0
+Ha llegado a la cola_unica la persona 0
+ha llegado al cajero_cola_unica1 la persona 0
+------------------------------------------------
+
+------------------------------------------------
+En el instante 5.051301163221458 :
+se ha creado una persona con id 1
+Ha llegado a la cola_unica la persona 1
+ha llegado al cajero_cola_unica2 la persona 1
+------------------------------------------------
+
+------------------------------------------------
+En el instante 5.253871176822364 :
+se ha creado una persona con id 2
+Ha llegado a la cola_unica la persona 2
+ha llegado al cajero_cola_unica3 la persona 2
+------------------------------------------------
+
+------------------------------------------------
+En el instante 8.129546297068945 :
+persona 2 Se ha ido del cajero_cola_unica3
+------------------------------------------------
+
+------------------------------------------------
+En el instante 8.368093786286893 :
+se ha creado una persona con id 3
+Ha llegado a la cola_unica la persona 3
+ha llegado al cajero_cola_unica3 la persona 3
+------------------------------------------------
+
+------------------------------------------------
+En el instante 9.998102728235922 :
+se ha creado una persona con id 4
+Ha llegado a la cola_cajero4 la persona 4
+ha llegado al cajero4 la persona 4
+------------------------------------------------
+
+------------------------------------------------
+En el instante 10.232957547185176 :
+persona 0 Se ha ido del cajero_cola_unica1
+------------------------------------------------
+
+------------------------------------------------
+En el instante 13.554223194649177 :
+se ha creado una persona con id 5
+Ha llegado a la cola_unica la persona 5
+ha llegado al cajero_cola_unica1 la persona 5
+------------------------------------------------
+
+------------------------------------------------
+En el instante 14.115360897017467 :
+se ha creado una persona con id 6
+Ha llegado a la cola_cajero5 la persona 6
+ha llegado al cajero5 la persona 6
+------------------------------------------------
+
+------------------------------------------------
+En el instante 14.151416423897006 :
+se ha creado una persona con id 7
+Ha llegado a la cola_cajero6 la persona 7
+ha llegado al cajero6 la persona 7
+------------------------------------------------
+
+------------------------------------------------
+En el instante 15.748012860363945 :
+se ha creado una persona con id 8
+Ha llegado a la cola_unica la persona 8
+------------------------------------------------
+
+------------------------------------------------
+En el instante 15.857253328012343 :
+se ha creado una persona con id 9
+Ha llegado a la cola_cajero4 la persona 9
+------------------------------------------------
+
+------------------------------------------------
+En el instante 16.766071496826697 :
+persona 1 Se ha ido del cajero_cola_unica2
+ha llegado al cajero_cola_unica2 la persona 8
+------------------------------------------------
+
+------------------------------------------------
+En el instante 17.701387062490916 :
+se ha creado una persona con id 10
+Ha llegado a la cola_unica la persona 10
+------------------------------------------------
+
+------------------------------------------------
+En el instante 19.99803867546436 :
+persona 4 Se ha ido del cajero4
+ha llegado al cajero4 la persona 9
+------------------------------------------------
+
+------------------------------------------------
+En el instante 20.915432551038858 :
+persona 3 Se ha ido del cajero_cola_unica3
+ha llegado al cajero_cola_unica3 la persona 10
+------------------------------------------------
+
+------------------------------------------------
+En el instante 21.49060816471518 :
+se ha creado una persona con id 11
+Ha llegado a la cola_unica la persona 11
+------------------------------------------------
+
+------------------------------------------------
+En el instante 23.645029905621275 :
+se ha creado una persona con id 12
+Ha llegado a la cola_cajero4 la persona 12
+------------------------------------------------
+
+------------------------------------------------
+En el instante 23.739693918321144 :
+persona 6 Se ha ido del cajero5
+------------------------------------------------
+
+------------------------------------------------
+En el instante 24.25264047460361 :
+se ha creado una persona con id 13
+Ha llegado a la cola_cajero5 la persona 13
+ha llegado al cajero5 la persona 13
+------------------------------------------------
+
+------------------------------------------------
+En el instante 24.663527981155685 :
+se ha creado una persona con id 14
+Ha llegado a la cola_cajero5 la persona 14
+------------------------------------------------
+
+------------------------------------------------
+En el instante 25.411697434894222 :
+persona 7 Se ha ido del cajero6
+------------------------------------------------
+
+------------------------------------------------
+En el instante 25.44758804755591 :
+se ha creado una persona con id 15
+Ha llegado a la cola_cajero6 la persona 15
+ha llegado al cajero6 la persona 15
+------------------------------------------------
+
+------------------------------------------------
+En el instante 26.575456851197956 :
+persona 5 Se ha ido del cajero_cola_unica1
+ha llegado al cajero_cola_unica1 la persona 11
+------------------------------------------------
+
+------------------------------------------------
+En el instante 28.413202831088338 :
+persona 8 Se ha ido del cajero_cola_unica2
+------------------------------------------------
+
+------------------------------------------------
+En el instante 28.44520863684722 :
+se ha creado una persona con id 16
+Ha llegado a la cola_unica la persona 16
+ha llegado al cajero_cola_unica2 la persona 16
+------------------------------------------------
+
+------------------------------------------------
+En el instante 31.591581639317894 :
+persona 16 Se ha ido del cajero_cola_unica2
+------------------------------------------------
+
+------------------------------------------------
+En el instante 31.723636905847794 :
+se ha creado una persona con id 17
+Ha llegado a la cola_unica la persona 17
+ha llegado al cajero_cola_unica2 la persona 17
+------------------------------------------------
+
+------------------------------------------------
+En el instante 31.750547392893896 :
+persona 13 Se ha ido del cajero5
+ha llegado al cajero5 la persona 14
+------------------------------------------------
+
+------------------------------------------------
+En el instante 32.82990670430148 :
+persona 15 Se ha ido del cajero6
+------------------------------------------------
+
+------------------------------------------------
+En el instante 33.31873740155178 :
+persona 9 Se ha ido del cajero4
+ha llegado al cajero4 la persona 12
+------------------------------------------------
+
+------------------------------------------------
+En el instante 33.365916583524786 :
+se ha creado una persona con id 18
+Ha llegado a la cola_cajero6 la persona 18
+ha llegado al cajero6 la persona 18
+------------------------------------------------
+
+------------------------------------------------
+En el instante 35.7995440957433 :
+persona 12 Se ha ido del cajero4
+------------------------------------------------
+
+------------------------------------------------
+En el instante 35.981952764072304 :
+persona 10 Se ha ido del cajero_cola_unica3
+------------------------------------------------
+
+------------------------------------------------
+En el instante 37.909885747996576 :
+se ha creado una persona con id 19
+Ha llegado a la cola_unica la persona 19
+ha llegado al cajero_cola_unica3 la persona 19
+------------------------------------------------
+
+------------------------------------------------
+En el instante 37.95990985077088 :
+persona 11 Se ha ido del cajero_cola_unica1
+------------------------------------------------
+
+------------------------------------------------
+En el instante 41.62832578378712 :
+se ha creado una persona con id 20
+Ha llegado a la cola_unica la persona 20
+ha llegado al cajero_cola_unica1 la persona 20
+------------------------------------------------
+
+------------------------------------------------
+En el instante 42.68646066587371 :
+persona 14 Se ha ido del cajero5
+------------------------------------------------
+
+------------------------------------------------
+En el instante 44.14586360230896 :
+persona 18 Se ha ido del cajero6
+------------------------------------------------
+
+------------------------------------------------
+En el instante 47.11429269215172 :
+persona 17 Se ha ido del cajero_cola_unica2
+------------------------------------------------
+
+------------------------------------------------
+En el instante 47.13378684829768 :
+se ha creado una persona con id 21
+Ha llegado a la cola_unica la persona 21
+ha llegado al cajero_cola_unica2 la persona 21
+------------------------------------------------
+
+------------------------------------------------
+En el instante 48.51409657973586 :
+se ha creado una persona con id 22
+Ha llegado a la cola_cajero4 la persona 22
+ha llegado al cajero4 la persona 22
+------------------------------------------------
+
+------------------------------------------------
+En el instante 49.179906351568924 :
+persona 19 Se ha ido del cajero_cola_unica3
+------------------------------------------------
+
+------------------------------------------------
+En el instante 49.44518801078219 :
+se ha creado una persona con id 23
+Ha llegado a la cola_unica la persona 23
+ha llegado al cajero_cola_unica3 la persona 23
+------------------------------------------------
+
+------------------------------------------------
+En el instante 50.30087035973937 :
+se ha creado una persona con id 24
+Ha llegado a la cola_cajero5 la persona 24
+ha llegado al cajero5 la persona 24
+------------------------------------------------
+
+------------------------------------------------
+En el instante 51.613916923559806 :
+Ya no van a llegar más personas
+------------------------------------------------
+
+------------------------------------------------
+En el instante 51.76954690247803 :
+persona 20 Se ha ido del cajero_cola_unica1
+------------------------------------------------
+
+------------------------------------------------
+En el instante 57.249375398160964 :
+persona 21 Se ha ido del cajero_cola_unica2
+------------------------------------------------
+
+------------------------------------------------
+En el instante 58.083097453592174 :
+persona 23 Se ha ido del cajero_cola_unica3
+------------------------------------------------
+
+------------------------------------------------
+En el instante 58.16489933632852 :
+persona 24 Se ha ido del cajero5
+------------------------------------------------
+
+------------------------------------------------
+En el instante 59.01448972562241 :
+persona 22 Se ha ido del cajero4
+------------------------------------------------
+
+Estoy recogiendo estadisticos
