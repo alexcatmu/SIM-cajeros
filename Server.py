@@ -21,7 +21,7 @@ class Server:
         self.queue = queue
 
     def recullEntitat(self, time, entitat):
-        print("ha llegado al", self.id ,"la persona", entitat.id)
+        print("Ha arribat al", self.id ,"la persona", entitat.id)
         nouEvent = self.programarFinalServei(time, entitat)
         self.scheduler.afegirEsdeveniment(nouEvent)
 
@@ -43,7 +43,7 @@ class Server:
 
     def processarFiServei(self, event):
         # Registrar estadístics
-        print("persona " + str(event.entity.id) + " Se ha ido del " + self.id)
+        print("La persona " + str(event.entity.id) + " ha marxat del " + self.id)
         self.entitatsTractades = self.entitatsTractades + 1
         self.state = SERVER_STATE["idle"]
         self.queue.enviarPersonaAlCaixer(event.time)

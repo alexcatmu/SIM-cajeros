@@ -16,8 +16,8 @@ class Source:
         self.state = 'IDLE'
         self.scheduler = scheduler
 
-    def crearConnexio(self, colas_de_cajero):
-        self.colas_de_cajero = colas_de_cajero
+    def crearConnexio(self, cues_de_caixer):
+        self.cues_de_caixer = cues_de_caixer
 
     def tractarEsdeveniment(self, event):
         if event.type == TYPE_EVENT['start']:
@@ -28,8 +28,8 @@ class Source:
 
     def simulationStart(self, event):
         entitat = self.crearPersona()
-        cua_mes_buida = self.colas_de_cajero[0]
-        entitat.cola = cua_mes_buida.id
+        cua_mes_buida = self.cues_de_caixer[0]
+        entitat.cua = cua_mes_buida.id
         cua_mes_buida.recullEntitat(event.time, entitat)
         nouEvent = self.properaArribada(0, entitat)
         self.scheduler.afegirEsdeveniment(nouEvent)
@@ -41,20 +41,20 @@ class Source:
             return None
         entitat = self.crearPersona()
         #Comparar cues dels caixers i agafar la cua més buida per afegir a la persona a aquesta
-        cua_mes_buida = self.colas_de_cajero[0]
+        cua_mes_buida = self.cues_de_caixer[0]
         canBreak = False
-        for cola in self.colas_de_cajero:
-            for cajero in cola.cajeros:
-                if cajero.state == SERVER_STATE["idle"]:
-                    cua_mes_buida = cola
+        for cua in self.cues_de_caixer:
+            for caixer in cua.caixers:
+                if caixer.state == SERVER_STATE["idle"]:
+                    cua_mes_buida = cua
                     canBreak = True
                     break
             if canBreak:
                 break
-            if (len(cola.entities)/len(cola.cajeros)) < (len(cua_mes_buida.entities)/len(cua_mes_buida.cajeros)):
-                cua_mes_buida = cola
+            if (len(cua.entitats) / len(cua.caixers)) < (len(cua_mes_buida.entitats) / len(cua_mes_buida.caixers)):
+                cua_mes_buida = cua
 
-        entitat.cola = cua_mes_buida.id
+        entitat.cua = cua_mes_buida.id
         cua_mes_buida.recullEntitat(event.time, entitat)
 
         nouEvent = self.properaArribada(event.time, entitat)
