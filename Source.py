@@ -37,7 +37,7 @@ class Source:
     def processNextArrival(self, event):
         #Creem persona si encara no s'ha arribat al nombre de persones màxim
         if self.scheduler.entities_quantity < self.entitatsCreades:
-            print("Ya no van a llegar más personas")
+            print("Ja no arribaran més persones")
             return None
         entitat = self.crearPersona()
         #Comparar cues dels caixers i agafar la cua més buida per afegir a la persona a aquesta
