@@ -6,5 +6,5 @@ class Person:
     def __init__(self):
         self.id = next(self.id)
         self.tempsArribadaCua = 0
-        self.cola = None
+        self.cua = None
         print("se ha creado una persona con id " + str(self.id))

@@ -14,35 +14,34 @@ class Scheduler:
     eventList = []
 
     def __init__(self):
-        # creador de personas que entran al supermercado
         self.statistics = Statistics()
         self.source = Source(self)
 
-        self.cola_unica = MyQueue("cola_unica")
-        self.cajero_cola_unica1 = Server(self, "cajero_cola_unica1")
-        self.cajero_cola_unica2 = Server(self, "cajero_cola_unica2")
-        self.cajero_cola_unica3 = Server(self, "cajero_cola_unica3")
-        self.cola_unica.crearConnexio([self.cajero_cola_unica1, self.cajero_cola_unica2, self.cajero_cola_unica3])
-        self.cajero_cola_unica1.crearConnexio(self.cola_unica)
-        self.cajero_cola_unica2.crearConnexio(self.cola_unica)
-        self.cajero_cola_unica3.crearConnexio(self.cola_unica)
+        self.cua_unica = MyQueue("cua_unica")
+        self.caixer_cua_unica1 = Server(self, "caixer_cua_unica1")
+        self.caixer_cua_unica2 = Server(self, "caixer_cua_unica2")
+        self.caixer_cua_unica3 = Server(self, "caixer_cua_unica3")
+        self.cua_unica.crearConnexio([self.caixer_cua_unica1, self.caixer_cua_unica2, self.caixer_cua_unica3])
+        self.caixer_cua_unica1.crearConnexio(self.cua_unica)
+        self.caixer_cua_unica2.crearConnexio(self.cua_unica)
+        self.caixer_cua_unica3.crearConnexio(self.cua_unica)
 
-        self.cola_cajero4 = MyQueue("cola_cajero4")
-        self.cajero4 = Server(self, "cajero4")
-        self.cola_cajero4.crearConnexio([self.cajero4])
-        self.cajero4.crearConnexio(self.cola_cajero4)
+        self.cua_caixer4 = MyQueue("cua_caixer4")
+        self.caixer4 = Server(self, "caixer4")
+        self.cua_caixer4.crearConnexio([self.caixer4])
+        self.caixer4.crearConnexio(self.cua_caixer4)
 
-        self.cola_cajero5 = MyQueue("cola_cajero5")
-        self.cajero5 = Server(self, "cajero5")
-        self.cola_cajero5.crearConnexio([self.cajero5])
-        self.cajero5.crearConnexio(self.cola_cajero5)
+        self.cua_caixer5 = MyQueue("cua_caixer5")
+        self.caixer5 = Server(self, "caixer5")
+        self.cua_caixer5.crearConnexio([self.caixer5])
+        self.caixer5.crearConnexio(self.cua_caixer5)
 
-        self.cola_cajero6 = MyQueue("cola_cajero6")
-        self.cajero6 = Server(self, "cajero6")
-        self.cola_cajero6.crearConnexio([self.cajero6])
-        self.cajero6.crearConnexio(self.cola_cajero6)
+        self.cua_caixer6 = MyQueue("cua_caixer6")
+        self.caixer6 = Server(self, "caixer6")
+        self.cua_caixer6.crearConnexio([self.caixer6])
+        self.caixer6.crearConnexio(self.cua_caixer6)
 
-        self.source.crearConnexio([self.cola_unica, self.cola_cajero4, self.cola_cajero5, self.cola_cajero6])
+        self.source.crearConnexio([self.cua_unica, self.cua_caixer4, self.cua_caixer5, self.cua_caixer6])
 
         self.simulationStart = Event(self, TYPE_EVENT['start'], self.currentTime, None)
         self.eventList.append(self.simulationStart)
@@ -61,7 +60,7 @@ class Scheduler:
             self.currentTime = event.time
             # deleguem l'acció a realitzar de l'esdeveniment a l'objecte que l'ha generat
             print("------------------------------------------------")
-            print("En el instante", event.time, ":")
+            print("A l'instant", event.time, ":")
             event.object.tractarEsdeveniment(event)
             print("------------------------------------------------\n")
 
@@ -76,17 +75,18 @@ class Scheduler:
 
     def tractarEsdeveniment(self, event):
         if (event.type == TYPE_EVENT['start']):
-            print("esta iniciando la simulacion")
+            print("S'està iniciant la simulació")
             self.source.simulationStart(event)
 
     def recollirEstadistics(self):
+        print("Recollint estadístics...")
         self.statistics.analyzeEvents()
 
     def configurarModel(self, entities_quantity, time_between_arrivals, time_processing):
         self.entities_quantity = entities_quantity
         self.time_between_arrivals = time_between_arrivals
         self.time_processing = time_processing
-        print("estoy configurando el modelo")
+        print("Configurant el model...")
 
     def getEvent(self):
         event = self.eventList[0]  # [1,2,3,4,5]

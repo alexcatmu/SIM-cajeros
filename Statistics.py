@@ -6,7 +6,8 @@ class Statistics:
         self.events.append(event)
 
     def analyzeEvents(self):
-        print("analizando eventos")
+        print("Analitzant tots els esdeveniments...\n")
+        print("RESULTATS:")
         print(len(self.events))
 
 
