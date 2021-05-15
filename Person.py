@@ -7,4 +7,4 @@ class Person:
         self.id = next(self.id)
         self.tempsArribadaCua = 0
         self.cua = None
-        print("S'ha creat la persona amb id " + str(self.id))
+        print("S'ha creat una persona amb id " + str(self.id))
