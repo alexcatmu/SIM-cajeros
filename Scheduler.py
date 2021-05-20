@@ -1,6 +1,7 @@
+import os
 import sys
 
-from Server import *
+from Settings import ENTITIES_QUANTITY, TIME_BETWEEN_ARRIVALS, TIME_PROCESSING, START_SEED, QUANTITY_OF_EXPERIMENTS
 from Source import *
 from Event import *
 from Server import Server
@@ -10,10 +11,12 @@ from Statistics import Statistics
 
 
 class Scheduler:
-    currentTime = 0
-    eventList = []
 
     def __init__(self):
+
+        self.currentTime = 0
+        self.eventList = []
+
         self.statistics = Statistics()
         self.source = Source(self)
 
@@ -96,7 +99,32 @@ class Scheduler:
 
 if __name__ == "__main__":
     print(sys.argv)
-    np.random.seed(0)
-    scheduler = Scheduler()
-    scheduler.run(entities_quantity=25, time_between_arrivals=2, time_processing=20)
-    Statistics().export()
+    seed = START_SEED
+    np.random.seed(seed)
+    experiments_finished = []
+    first_experiment = 1
+
+    ### LIMPIAR FICHERO STATISTICS ####
+    statistics_output = open('statistics.json', 'w')
+    statistics_output.close()
+
+    ### ABRIR EN MODO APPEND EL FICHERO STATISTICS
+    statistics_output = open('statistics.json', 'a')
+    statistics_output.write('[')
+
+    for actual_experiment in range(first_experiment, QUANTITY_OF_EXPERIMENTS + 1):
+        Statistics().seed = seed
+        scheduler = Scheduler()
+
+        scheduler.run(entities_quantity=ENTITIES_QUANTITY, time_between_arrivals=TIME_BETWEEN_ARRIVALS,
+                      time_processing=TIME_PROCESSING)
+
+        experiments_finished.append(Statistics().to_json())
+        statistics_output.write(Statistics().to_json())
+        if (actual_experiment < QUANTITY_OF_EXPERIMENTS):
+            statistics_output.write(',')
+        seed += 1
+        Statistics().clear()
+    statistics_output.seek(statistics_output.tell() - 1, os.SEEK_SET)
+    statistics_output.write(']')
+    statistics_output.close()

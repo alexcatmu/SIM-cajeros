@@ -1,4 +1,6 @@
 import json
+
+
 class SingletonMeta(type):
     _instances = {}
 
@@ -8,13 +10,15 @@ class SingletonMeta(type):
             cls._instances[cls] = instance
         return cls._instances[cls]
 
+
 class Statistics(metaclass=SingletonMeta):
     def __init__(self):
         self.entities = []
-        #self.time_in_the_queue = []
-        #self.entity_life = []
-        #self.queue_capacity = []
-        #self.time_of_service = []
+        self.seed = None
+        # self.time_in_the_queue = []
+        # self.entity_life = []
+        # self.queue_capacity = []
+        # self.time_of_service = []
 
     def addEntity(self, entity):
         self.entities.append(entity)
@@ -22,6 +26,13 @@ class Statistics(metaclass=SingletonMeta):
     def analyseStatistics(self):
         pass
 
-    def export(self):
-        print("HOLA que talrsgsdgsdgsg")
-        json.dumps(self.__dict__)
+    def to_json(self):
+        jsonStr = json.dumps(self, default=lambda x: x.__dict__)
+        return jsonStr
+
+    def to_dict(self):
+        return lambda x: x.__dict__
+
+    def clear(self):
+        self.entities = []
+        self.seed = None
