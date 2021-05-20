@@ -80,7 +80,7 @@ class Scheduler:
 
     def recollirEstadistics(self):
         print("Recollint estadístics...")
-        self.statistics.analyzeEvents()
+        Statistics().analyseStatistics()
 
     def configurarModel(self, entities_quantity, time_between_arrivals, time_processing):
         self.entities_quantity = entities_quantity
@@ -90,12 +90,13 @@ class Scheduler:
 
     def getEvent(self):
         event = self.eventList[0]  # [1,2,3,4,5]
-        self.statistics.addEvent(event)
         self.eventList = self.eventList[1:]  # [2,3,4,5]
         return event
 
 
 if __name__ == "__main__":
     print(sys.argv)
+    np.random.seed(0)
     scheduler = Scheduler()
-    scheduler.run(entities_quantity=25, time_between_arrivals=2, time_processing=10)
+    scheduler.run(entities_quantity=25, time_between_arrivals=2, time_processing=20)
+    Statistics().export()

@@ -22,6 +22,7 @@ class Server:
 
     def recullEntitat(self, time, entitat):
         print("Ha arribat al", self.id ,"la persona", entitat.id)
+        entitat.tempsIniciServei = time
         nouEvent = self.programarFinalServei(time, entitat)
         self.scheduler.afegirEsdeveniment(nouEvent)
 
@@ -35,6 +36,7 @@ class Server:
     def programarFinalServei(self, time, entitat):
         # que triguem a fer un servei (aleatorietat)
         tempsServei = normal(self.scheduler.time_processing)
+        entitat.tempsSortida = time + tempsServei
         # incrementem estadistics si s'escau
         self.entitatsTractades = self.entitatsTractades + 1
         self.state = SERVER_STATE["busy"]

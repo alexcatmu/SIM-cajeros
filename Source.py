@@ -28,6 +28,7 @@ class Source:
 
     def simulationStart(self, event):
         entitat = self.crearPersona()
+        entitat.tempsArribada = 0
         cua_mes_buida = self.cues_de_caixer[0]
         entitat.cua = cua_mes_buida.id
         cua_mes_buida.recullEntitat(event.time, entitat)
@@ -40,6 +41,7 @@ class Source:
             print("Ja no arribaran més persones")
             return None
         entitat = self.crearPersona()
+        entitat.tempsArribada = event.time
         #Comparar cues dels caixers i agafar la cua més buida per afegir a la persona a aquesta
         cua_mes_buida = self.cues_de_caixer[0]
         canBreak = False

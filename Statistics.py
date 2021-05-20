@@ -1,13 +1,25 @@
-class Statistics:
+class SingletonMeta(type):
+    _instances = {}
+
+    def __call__(cls, *args, **kwargs):
+        if cls not in cls._instances:
+            instance = super().__call__(*args, **kwargs)
+            cls._instances[cls] = instance
+        return cls._instances[cls]
+
+class Statistics(metaclass=SingletonMeta):
     def __init__(self):
-        self.events = []
+        self.entities = []
+        self.time_in_the_queue = []
+        self.entity_life = []
+        self.queue_capacity = []
+        self.time_of_service = []
 
-    def addEvent(self, event):
-        self.events.append(event)
+    def addEntity(self, entity):
+        self.entities.append(entity)
 
-    def analyzeEvents(self):
-        print("Analitzant tots els esdeveniments...\n")
-        print("RESULTATS:")
-        print(len(self.events))
+    def analyseStatistics(self):
+        pass
 
-
+    def export(self):
+        print("HOLA que talrsgsdgsdgsg")
