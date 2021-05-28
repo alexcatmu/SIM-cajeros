@@ -3,6 +3,7 @@ import numpy as np
 from Scheduler import Scheduler
 from Settings import START_SEED, ENTITIES_QUANTITY, TIME_BETWEEN_ARRIVALS, TIME_PROCESSING, QUANTITY_OF_EXPERIMENTS
 from Statistics import Statistics
+from Analyzer import CalcularResultats
 
 print("Hola, se va a iniciar la simulación con los siguientes parámetros:")
 print("Cantidad de entidades del sistema:", ENTITIES_QUANTITY)
@@ -58,3 +59,5 @@ for actual_experiment in range(first_experiment, QUANTITY_OF_EXPERIMENTS + 1):
 
 statistics_output.write(']')
 statistics_output.close()
+CalcularResultats()
+
