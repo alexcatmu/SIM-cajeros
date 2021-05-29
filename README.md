@@ -1,4 +1,6 @@
 Projecte de l'assignatura de SIMULACIÓ de la Facultat d'Informàtica de Barcelona - UPC 
+
+
 Realitzat per: Alex Catalan i Aleix Vila
 
 Per exectuar-lo:
