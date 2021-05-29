@@ -19,6 +19,10 @@ class Server:
     def crearConnexio(self, queue):
         self.queue = queue
 
+    def tractarEsdeveniment(self, event):
+        if (event.type == TYPE_EVENT['end_service']):
+            self.processarFiServei(event)
+
     def recullEntitat(self, time, entitat):
         print("Ha arribat al", self.id ,"la persona", entitat.id)
         entitat.tempsIniciServei = time

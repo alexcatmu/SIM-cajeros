@@ -67,9 +67,6 @@ class Scheduler:
             event.object.tractarEsdeveniment(event)
             print("------------------------------------------------\n")
 
-        # recollida d'estadístics
-        self.recollirEstadistics()
-
     def afegirEsdeveniment(self, event):
         # inserir esdeveniment de forma ordenada
         self.eventList.append(event)
@@ -80,10 +77,6 @@ class Scheduler:
         if (event.type == TYPE_EVENT['start']):
             print("S'està iniciant la simulació")
             self.source.simulationStart(event)
-
-    def recollirEstadistics(self):
-        print("Recollint estadístics...")
-        Statistics().analyseStatistics()
 
     def configurarModel(self, entities_quantity, time_between_arrivals, time_processing):
         self.entities_quantity = entities_quantity
