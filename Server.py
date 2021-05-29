@@ -15,7 +15,6 @@ class Server:
         self.entitatsTractades = 0
         self.state = SERVER_STATE['idle']
         self.scheduler = scheduler
-        self.entitatActiva = None
 
     def crearConnexio(self, queue):
         self.queue = queue
@@ -25,13 +24,6 @@ class Server:
         entitat.tempsIniciServei = time
         nouEvent = self.programarFinalServei(time, entitat)
         self.scheduler.afegirEsdeveniment(nouEvent)
-
-    def tractarEsdeveniment(self, event):
-        if (event.type == TYPE_EVENT['start']):
-            self.simulationStart(event)
-
-        if (event.type == TYPE_EVENT['end_service']):
-            self.processarFiServei(event)
 
     def programarFinalServei(self, time, entitat):
         # que triguem a fer un servei (aleatorietat)
