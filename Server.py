@@ -4,7 +4,7 @@ from Event import *
 
 
 def normal(time_processing):
-    return np.random.normal(time_processing,time_processing/3,1)[0]
+    return np.random.normal(time_processing,time_processing/1.5,1)[0]
 
 
 class Server:

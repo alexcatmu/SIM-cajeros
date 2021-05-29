@@ -16,11 +16,11 @@ print("Cantidad de experimentos:", QUANTITY_OF_EXPERIMENTS)
 cambiar_parametros = input("Desea cambiar los parámetros de configuración(s/n): ")
 
 if (cambiar_parametros == 's'):
-    ENTITIES_QUANTITY = input("Cantidad de entidades del sistema: ")
-    TIME_BETWEEN_ARRIVALS = input("Tiempo medio entre llegadas: ")
-    TIME_PROCESSING = input("Tiempo medio de proceso: ")
-    START_SEED = input("Semilla para las distribuciones: ")
-    QUANTITY_OF_EXPERIMENTS = input("Cantidad de experimentos: ")
+    ENTITIES_QUANTITY = int(input("Cantidad de entidades del sistema: "))
+    TIME_BETWEEN_ARRIVALS = int(input("Tiempo medio entre llegadas: "))
+    TIME_PROCESSING = int(input("Tiempo medio de proceso: "))
+    START_SEED = int(input("Semilla para las distribuciones: "))
+    QUANTITY_OF_EXPERIMENTS = int(input("Cantidad de experimentos: "))
 
 
 
@@ -48,7 +48,7 @@ for actual_experiment in range(first_experiment, QUANTITY_OF_EXPERIMENTS + 1):
 
     experiments_finished.append(Statistics().to_json())
     statistics_output.write(Statistics().to_json())
-    if (actual_experiment < QUANTITY_OF_EXPERIMENTS):
+    if actual_experiment < QUANTITY_OF_EXPERIMENTS:
         statistics_output.write(',')
     seed += 1
     Statistics().clear()

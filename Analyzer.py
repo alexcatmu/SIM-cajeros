@@ -1,7 +1,5 @@
 import json
 
-import numpy as np
-import pandas as pd
 import matplotlib.pyplot as plt
 from itertools import chain
 
@@ -55,53 +53,63 @@ def CalcularResultats():
     fig1, ax1 = plt.subplots()
     ax1.set_title('Temps totals al supermercat per experiment')
     ax1.boxplot(total_times_experiments)
+    plt.savefig('./graphics/temps_total_supermercat_experiment')
     plt.show()
 
     fig1, ax1 = plt.subplots()
     ax1.set_title('Temps totals al supermercat mitjana total')
     ax1.boxplot(list(chain.from_iterable(total_times_experiments)))
+    plt.savefig('./graphics/temps_total_supermercat_mitjana_total')
     plt.show()
 
     fig1, ax1 = plt.subplots()
     ax1.set_title('Temps totals a les cues per experiment')
     ax1.boxplot(queue_times_experiments)
+    plt.savefig('./graphics/temps_total_cues_per_experiment')
     plt.show()
 
     fig1, ax1 = plt.subplots()
     ax1.set_title('Temps totals a les cues mitjana total')
     ax1.boxplot(list(chain.from_iterable(queue_times_experiments)))
+    plt.savefig('./graphics/temps_total_cues_mitjana_total')
     plt.show()
 
     fig1, ax1 = plt.subplots()
     ax1.set_title('Temps totals a la cua unificada per experiment')
     ax1.boxplot(unified_queue_times_experiments)
+    plt.savefig('./graphics/temps_total_cua_unificada_experiment')
     plt.show()
 
     fig1, ax1 = plt.subplots()
     ax1.set_title('Temps totals a la cua unificada mitjana total')
     ax1.boxplot(list(chain.from_iterable(unified_queue_times_experiments)))
+    plt.savefig('./graphics/temps_total_cua_unificada_mitjana_total')
     plt.show()
 
     fig1, ax1 = plt.subplots()
     ax1.set_title('Temps totals a les cues específiques per experiment')
     ax1.boxplot(specific_queues_times_experiments)
+    plt.savefig('./graphics/temps_total_cues_especifiques_per_experiment')
     plt.show()
 
     fig1, ax1 = plt.subplots()
     ax1.set_title('Temps totals a les cues específiques mitjana total')
     ax1.boxplot(list(chain.from_iterable(specific_queues_times_experiments)))
+    plt.savefig('./graphics/temps_total_cues_especifiques_mitjana_total')
     plt.show()
 
     for i in time_by_time_people_in_the_unified_queue_exps:
         numbers = [x for x in range(0, len(i))]
         plt.plot(numbers, i)
     plt.title("Nombre de persones a la cua única")
+    plt.savefig('./graphics/nombre_persones_cua_unica')
     plt.show()
 
     for i in time_by_time_people_in_the_specific_queues_exps:
         numbers = [x for x in range(0, len(i))]
         plt.plot(numbers, i)
     plt.title("Nombre de persones a les cues específiques")
+    plt.savefig('./graphics/nombre_persones_cues_especifiques')
     plt.show()
 
     max_time_unified = max(map(len,time_by_time_people_in_the_unified_queue_exps))
@@ -128,8 +136,9 @@ def CalcularResultats():
     numbers = [x for x in range(0, max(max_time_unified, max_time_specific))]
     plt.plot(numbers, time_by_time_people_in_the_unified_queue_exps_average, label = "Cua Única")
     plt.plot(numbers, time_by_time_people_in_the_specific_queues_exps_average, label = "Cues específiques")
-    plt.title("Nombre de persones a la cua única de mitjana")
+    plt.title("Nombre de persones a les cues de mitjana")
     plt.legend()
+    plt.savefig('./graphics/nombre_persones_cues_total_mitjana')
     plt.show()
 
 
